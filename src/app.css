@@ -1,0 +1,53 @@
+html, body, #root {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+    border: 2px solid rgb(3, 47, 97);
+    max-width: 400px;
+    min-width: 230px;
+    margin: 50px auto;
+}
+
+
+.display {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30px 30px;
+    column-gap: 1px;
+    row-gap: 1px;
+    background-color: rgba(133, 212, 212, 0.308);
+    border-bottom: 1px solid black;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    grid-template-rows: 60px 60px 60px 60px;
+    grid-column-gap: 1px;
+    grid-row-gap: 1px;
+}
+
+.actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 60px;
+    column-gap: 1px;
+    
+}
+
+.button {
+    background-color: rgba(225, 228, 233, 0.863);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* .result, .input {
+    display: block;
+    height: 32px;
+    width: 69%;
+    border: 2px solid black;
+} */
