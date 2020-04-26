@@ -3,12 +3,13 @@ import React, { Component } from 'react';
 class Keypads extends Component {
 
     render() {
-        console.log('Keypad.js | props', this.props);
+        const disableBtn = !this.props.clearBtnEnabled;
         return (
             <div>
                 <div className="actions">
                     <button className="button" onClick={this.props.reset}>Reset</button>
-                    <button className="button" disabled={!this.props.clearBtnEnabled} onClick={this.props.clearInput}>Clear</button>
+                    {/* <button className={"button " + disableBtn ? "disableBtn" : ""} disabled={disableBtn} onClick={this.props.clearInput}>Clear</button> */}
+                    <button className="button" disabled={disableBtn} onClick={this.props.clearInput}>Clear</button>
                 </div>
                 <div>
                     <div className="keypad">

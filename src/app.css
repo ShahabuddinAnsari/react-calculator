@@ -36,7 +36,6 @@ html, body, #root {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 60px;
     column-gap: 1px;
-    
 }
 
 .button {
@@ -44,6 +43,10 @@ html, body, #root {
     font-size: 16px;
     font-weight: bold;
 }
+
+/* .disableBtn {
+    color: gray;
+} */
 
 /* .result, .input {
     display: block;

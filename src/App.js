@@ -49,8 +49,7 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state);
-    return (
+     return (
       <div className="wrapper">
         <div className="display input">{this.state.input ? this.state.input : ''}</div>
         <div className="display result">{this.state.result}</div>
