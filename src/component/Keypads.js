@@ -5,7 +5,7 @@ class Keypads extends Component {
     render() {
         const disableBtn = !this.props.clearBtnEnabled;
         return (
-            <div>
+            <div className="input">
                 <div className="actions">
                     <button className="btn btn-primary" onClick={this.props.reset}>Reset</button>
                     {/* <button className={"button " + disableBtn ? "disableBtn" : ""} disabled={disableBtn} onClick={this.props.clearInput}>Clear</button> */}
