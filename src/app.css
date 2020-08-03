@@ -51,13 +51,11 @@ body {
 }
 
 .btn {
-    /* width: 80px; */
     height: 80px;
     font-size: 32px;
     border-radius: 5px;
     background-color: transparent;
     color: #e8f8e9b8;
-    /* border: 1px solid #cccc; */
 }
 
 .btn:hover, .btn:active {
@@ -70,53 +68,36 @@ body {
     gap: 20px 20px;
 }
 
-/* body {
-    height: 100vh;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    background: #0b0c1b;
-    box-sizing: border-box;
+@media only screen and (max-width: 1000px) {
+    .wrapper {
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        grid-template-rows: 1fr 1fr 5fr;
+
+    }
+
+    
+    .btn {
+        height: 175px;
+        font-size: 90px;
+        border-radius: 0;
+        background-color: transparent;
+        color: #e8f8e9b8;
+    }
+    
 }
 
-.wrapper {
-    border: 3px solid #1cbfff;
-    border-radius: 10px;
-    padding: 1px;
-    max-width: 400px;
-    min-width: 230px;
-    margin: 0 auto;
+@media only screen and (max-width: 1000px) {
+    .display {
+        width: 100%;
+        height: 247px;
+        background: black;
+        color: #ccc;
+        font-size: 150px;
+        text-align: right;
+        padding-right: 20px;
+        padding-top: 5px;
+    }
+
 }
-
-
-.display {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 30px 30px;
-    column-gap: 1px;
-    row-gap: 1px;
-    background-color: rgba(133, 212, 212, 0.308);
-    border-bottom: 1px solid black;
-}
-
-.keypad {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr ;
-    grid-template-rows: 60px 60px 60px 60px;
-    grid-column-gap: 1px;
-    grid-row-gap: 1px;
-}
-
-.actions {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 60px;
-    column-gap: 1px;
-    padding: 1px 0;
-}
-
-.button {
-    background-color: rgba(225, 228, 233, 0.863);
-    font-size: 16px;
-    font-weight: bold;
-} */
