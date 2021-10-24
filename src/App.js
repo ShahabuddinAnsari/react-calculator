@@ -50,9 +50,9 @@ class App extends React.Component {
 
   render() {
      return (
-      <div className="wrapper">
-        <div className="display input">{this.state.input ? this.state.input : ''}</div>
-        <div className="display result">{this.state.result}</div>
+      <div className="main">
+        <div className="currentInput">{this.state.input ? this.state.input : ''}</div>
+        <div className="result">{this.state.result}</div>
         <Keypads
           inputHandler={this.inputHandler}
           reset={this.resetHandler}
