@@ -1,19 +1,20 @@
-import React from 'react';
-import Keypads from './component/Keypads';
+import React from "react";
+import Keypads from "./component/Keypads";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      result: '',
+      result: 0,
       input: [],
-      lastInput: ''
-    }
+      lastInput: "",
+    };
 
     this.inputHandler = this.inputHandler.bind(this);
     this.clearInput = this.clearInput.bind(this);
     this.resetHandler = this.resetHandler.bind(this);
+    this.calculateResult = this.calculateResult.bind(this);
     this.getResult = this.getResult.bind(this);
   }
 
@@ -25,7 +26,7 @@ class App extends React.Component {
   }
 
   resetHandler() {
-    this.setState({ result: '', input: [] });
+    this.setState({ result: "", input: [] });
   }
 
   clearInput() {
@@ -36,11 +37,10 @@ class App extends React.Component {
     this.setState({ input: currentInput });
   }
 
-  getResult() {
+  calculateResult() {
     let result;
     try {
       result = eval(this.state.input.join(""));
-
     } catch (error) {
       result = "Error";
     }
@@ -48,17 +48,26 @@ class App extends React.Component {
     this.setState({ result, input: [] });
   }
 
+  getResult() {
+    if (!this.state.result) return 0;
+
+    return parseFloat(this.state.result).toFixed(2);
+  }
+
   render() {
-     return (
+    return (
       <div className="main">
-        <div className="currentInput">{this.state.input ? this.state.input : ''}</div>
-        <div className="result">{this.state.result}</div>
+        <div className="currentInput">
+          {this.state.input ? this.state.input : ""}
+        </div>
+        <div className="result">{this.getResult()}</div>
         <Keypads
           inputHandler={this.inputHandler}
           reset={this.resetHandler}
           clearInput={this.clearInput}
           clearBtnEnabled={!!this.state.input.length}
-          getResult={this.getResult} />
+          calculateResult={this.calculateResult}
+        />
       </div>
     );
   }
