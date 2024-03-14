@@ -56,18 +56,20 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="main">
-        <div className="currentInput">
-          {this.state.input ? this.state.input : ""}
+      <div>
+        <div className="main">
+          <div className="currentInput">
+            {this.state.input ? this.state.input : ""}
+          </div>
+          <div className="result">{this.getResult()}</div>
+          <Keypads
+            inputHandler={this.inputHandler}
+            reset={this.resetHandler}
+            clearInput={this.clearInput}
+            clearBtnEnabled={!!this.state.input.length}
+            calculateResult={this.calculateResult}
+          />
         </div>
-        <div className="result">{this.getResult()}</div>
-        <Keypads
-          inputHandler={this.inputHandler}
-          reset={this.resetHandler}
-          clearInput={this.clearInput}
-          clearBtnEnabled={!!this.state.input.length}
-          calculateResult={this.calculateResult}
-        />
       </div>
     );
   }
